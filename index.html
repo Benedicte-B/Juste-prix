@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Bootstrap 4.6-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Script FontAwasome-->
+    <script  src = " https://kit.fontawesome.com/d38cea82af.js " crossorigin ="anonymous"></script>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>JQUERY Partie 2 - TP 1</title>
+</head>
+<body>
+    <div class="container-fluid bgPart1 text-white">
+        <!-- Page 1 : Button play -->
+        <div class="row d-block" id="firstPage">
+            <div class="col-12 firstPage text-center d-flex justify-content-center align-items-center">
+                <button class="btn slide-in-fwd-center" id="playGame"> Jouer !</button>
+            </div>
+        </div>
+        <!-- Part 2 : Game -->
+        <div class="d-none" id="secondPage">
+            <!-- Part 2 - Row 1 : Consigne -->
+            <div class="row" >
+                <div class="col-6 offset-3 text-center mt-5 pt-5">
+                    <h1 class=" mt-5">Le jeu du <br>juste prix</h1>
+                    <p>Devinez le nombre entre 1 et 100 généré aléatoirement par l'ordinateur.<br>
+                        <strong>Attention</strong> : vous ne disposez que de 10 tentatives !</p>
+                </div>
+            </div>
+            <!-- Part 2 - Row 2 : Timer -->
+            <div class="row">
+                <div class="col-6 offset-3 display-1 mt-n2">
+                    <div class="text-center invisible timer">
+                        <p class="minuteur">
+                            <span class="minutes">00</span> : <span class="seconds">00</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Part 2 - Row 3 : Form Champ + button-->
+            <div class="row">
+                <div class="col-6 offset-3 text-center mt-n4">
+                        <div class="form">
+                            <div>
+                                <label for="guessField" >Entrez votre proposition :</label>
+                            </div>
+                            <div>
+                                <input type="text" name="number" class="guessField">
+                            </div>
+                            <div>
+                                <input type="submit" value="Valider" class="guessSubmit btn btn-light my-2">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <!-- Part 2 - Row 4 : Indices -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="resultParas">
+                        <div class="row">
+                            <div class="col-2 offset-5">
+                                <p class="lastResult bg-alert"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 offset-5">
+                                <p class="lowOrHi"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 offset-4">
+                                <p class="guesses mt-n1"></p>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-1 offset-6">
+                                <p class="counter"></p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Part 3 : Results -->
+        <div class="d-none" id="thirdPage">
+            <!-- Part 3 - Row 1 : Gagné/perdu -->
+            <div class="row mt-1">
+                <div class="col-4 offset-4 text-center resultParas">
+                    <div class=space></div>
+                    <p class="loose"></p>
+                    <p class="win"></p>
+                    <p class= "reveal1">Le nombre était :</p>
+                    <p class="reveal2"></p>
+                    <p class="nbcoups1"></p>
+                    <p class="nbcoups2"></p>
+                    <div>
+                        <button class="btn btn-light" id="resetButton">Nouvelle partie !</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Part 3 - Row 2 : Stats -->
+            <div class="row mt-4">
+                <div class="col-4 offset-5 text-center">
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <p class="stat bggrey">JOUÉ</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="playChamp stat"> </p> 
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-3 ">
+                            <p class="stat bgred">PERDU</p>
+                        </div>
+                        <div class="col-3 ">
+                            <p class="looseChamp stat"> </p> 
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <p class="stat bggreen">GAGNÉ</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="winChamp stat"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Part 3 - Row 3 : Bagdes -->
+            <div class="col-10 offset-1">
+                <div class="badge5 invisible"><img src="assets/img/5.jpeg" alt=""></div>
+                <div class="badge10 invisible"><img src="assets/img/5.jpeg" alt=""></div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+    <!--Script Boostrap JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!--Script JS-->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
