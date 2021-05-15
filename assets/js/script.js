@@ -110,9 +110,9 @@ function checkGuess() {
         lastResult.style.backgroundColor = '#9A2321';
         counter.textContent =  guessCount;
         if (userGuess < randomNumber) {
-            lowOrHi.textContent = 'Trop petit !';
+            plusOumoins.textContent = 'Trop petit !';
         } else if (userGuess > randomNumber) {
-            lowOrHi.textContent = 'Trop grand !';
+            plusOumoins.textContent = 'Trop grand !';
         }
     }
     guessCount++;
