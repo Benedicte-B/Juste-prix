@@ -49,6 +49,7 @@ let loose = document.querySelector('.loose');
 let win = document.querySelector('.win');
 let nbcoups1 = document.querySelector('.nbcoups1');
 let nbcoups2 = document.querySelector('.nbcoups2');
+let reveal1 = document.querySelector('.reveal1');
 let reveal2 = document.querySelector('.reveal2');
 /* Gagné perdu */
 let badges5 = document.querySelector('.badge5');
@@ -90,15 +91,18 @@ function checkGuess() {
         bg.removeClass('bgPart2')
         bg.addClass('bgsuccess');
         win.textContent = 'BRAVO';
+        reveal1.textContent = 'Le nombre était : ';
         reveal2.textContent = randomNumber;
         nbcoups1.textContent = 'Vous avez réussi en ';
         nbcoups2.textContent =  guessCount + ' coups';
+        lowOrHi.textContent = '';
         winCounter++;
         setGameOver();
     } else if (guessCount === 10) {
         bg.removeClass('bgPart2');
         bg.addClass('bgloose');
         loose.textContent = 'PERDU';
+        reveal1.textContent = 'Le nombre était : ';
         reveal2.textContent = randomNumber;
         nbcoups1.textContent = 'Vous avez utilisé vos ';
         nbcoups2.textContent =  guessCount + ' coups';
@@ -106,13 +110,13 @@ function checkGuess() {
         setGameOver();
         // Alerte + ou -
     } else {
-        lastResult.textContent = 'Faux !';
+        lastResult.textContent = 'Faux  !';
         lastResult.style.backgroundColor = '#9A2321';
-        counter.textContent =  guessCount;
+        counter.textContent =  'Nombre de coups : ' + guessCount;
         if (userGuess < randomNumber) {
-            plusOumoins.textContent = 'Trop petit !';
+            lowOrHi.textContent = 'Trop petit !';
         } else if (userGuess > randomNumber) {
-            plusOumoins.textContent = 'Trop grand !';
+            lowOrHi.textContent = 'Trop grand !';
         }
     }
     guessCount++;
