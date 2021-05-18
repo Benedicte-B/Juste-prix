@@ -23,22 +23,22 @@
 
 /*============  BACKGROUND ============*/
 .bgPart1{
-    background-image: url('../img/bg-LJP-part1.png');
+    background-image: url('../img/bg-LJP-part1.jpg');
     background-size: cover;
     height: 100vh;
 }
 .bgPart2{
-    background-image: url('../img/bg-LJP-part2.png');
+    background-image: url('../img/bg-LJP-part2.jpg');
     background-size: cover;
     height: 100vh;
 }
 .bgloose{
-    background-image: url('../img/bg-LJP-loose.png');
+    background-image: url('../img/bg-LJP-loose.jpg');
     background-size: cover;
     height: 100vh;
 }
 .bgsuccess{
-    background-image: url('../img/bg-LJP-sucess.png');
+    background-image: url('../img/bg-LJP-sucess.jpg');
     background-size: cover;
     height: 100vh;
 }
